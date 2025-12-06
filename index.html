@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FTSC Reunion PhotoFrame</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>FTSC Reunion 2026 — PhotoFrame</h1>
+      <p>Upload a portrait photo, position it, then download as PNG or JPG.</p>
+    </header>
+
+    <section class="editor">
+      <div class="preview-wrap">
+        <div class="canvas-wrap" id="canvasWrap">
+          <img id="userImg" alt="Your photo" draggable="false" />
+          <img id="frameImg" src="frame.png" alt="Frame" draggable="false" />
+        </div>
+      </div>
+
+      <div class="controls">
+        <label class="file-btn">
+          Upload Photo
+          <input id="fileInput" type="file" accept="image/*" />
+        </label>
+
+        <div class="sliders">
+          <label>Scale: <input id="scale" type="range" min="0.5" max="2.0" step="0.01" value="1" /></label>
+          <label>Move X: <input id="posX" type="range" min="-200" max="200" step="1" value="0" /></label>
+          <label>Move Y: <input id="posY" type="range" min="-200" max="200" step="1" value="0" /></label>
+        </div>
+
+        <div class="buttons">
+          <button id="downloadPng">Download PNG</button>
+          <button id="downloadJpg">Download JPG</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+
+        <p class="note">Tip: Use the Scale and Move sliders to fit your face inside the frame center.</p>
+      </div>
+    </section>
+
+    <footer>
+      <small>Made for FTSC Reunion 2026 • Replace <code>frame.png</code> with your final frame image.</small>
+    </footer>
+  </main>
+
+  <canvas id="hiddenCanvas" style="display:none"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
